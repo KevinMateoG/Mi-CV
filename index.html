@@ -2,18 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="assets/style/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mi cv</title>
   </head>
   <body>
     <div>
-      <div>
-        <img
-          src="https://avatars.githubusercontent.com/u/165510156?v=4"
-          alt="Foto de perfil de Kevin Mateo"
-        />
-      </div>
       <section>
+        <div class="name-occupation">
+          <img
+            src="https://avatars.githubusercontent.com/u/165510156?v=4"
+            alt="Foto de perfil de Kevin Mateo"
+            class="profile-image"
+          />
+          <div>
+            <p><strong>Kevin Mateo Gómez Diez</strong></p>
+            <p>Ingeniero de sistemas</p>
+          </div>
+        </div>
+        <hr />
         <h2>Perfil</h2>
         <p>
           Soy estudiante de Ingeniería de Sistemas de la Universidad de
@@ -30,23 +37,6 @@
           y complementar lo que conozco actualmente.
         </p>
 
-        <!--<p>
-          Soy estudiante de ingenieria de sistemas de la Universidad de medellin
-        </p>
-        <p>
-          me esfuerzo para que todo a la hora de trabajar este bien estructurado
-          y claro
-        </p>
-        <p>
-          mi mayor fuerte es que puedo trabajar muy bien en equipo y siempre
-          intento tener las ideas de los demas encuenta
-        </p>
-        <p>
-          me gusta la programacion, especificamente el backend, devops y
-          ciberseguridad, siempre intento aprender cosas nuevas
-        </p>
-        <p>para aplicarlas y complementar lo que conozco actualmente</p>-->
-
         <h3>Experiencia laboral</h3>
         <ul>
           <li>
@@ -57,21 +47,31 @@
         </ul>
 
         <h3>Educación</h3>
-        <table>
+        <table class="table-education">
           <tr>
             <td>Lenguajes</td>
             <td>Frameworks</td>
             <td>Bases de datos</td>
           </tr>
           <tr>
-            <td><img src="https://skillicons.dev/icons?i=py,js" /></td>
-            <td><img src="https://skillicons.dev/icons?i=react,vuejs" /></td>
-            <td><img src="https://skillicons.dev/icons?i=mysql,supabase" /></td>
+            <td>
+              <img src="https://skillicons.dev/icons?i=py,js&theme=light" />
+            </td>
+            <td>
+              <img
+                src="https://skillicons.dev/icons?i=react,vuejs&theme=light"
+              />
+            </td>
+            <td>
+              <img
+                src="https://skillicons.dev/icons?i=mysql,supabase&theme=light"
+              />
+            </td>
           </tr>
         </table>
 
         <h3>Certificaciones</h3>
-        <ol>
+        <ol class="certification-ol">
           <li>
             <img
               src="https://images.credly.com/size/80x80/images/22a0ece5-ff05-4594-8320-25e55e9ae203/image.png"
@@ -91,17 +91,27 @@
 
         <h3>Contactos</h3>
         <p>
-          <strong>Correo electronico:</strong><em> gomezdiezkevin@gmail.com</em>
+          <strong>Correo electronico:</strong><em> gomezdiezkevinmateo@gmail.com</em>
         </p>
         <p><strong>Numero de contacto:</strong><em> 3054449345</em></p>
 
         <h3>Redes sociales</h3>
-        <a href="mailto:gomezdiezkevinmateo@gmail.com"
-          ><img src="https://skillicons.dev/icons?i=gmail"
-        /></a>
-        <a href="https://www.linkedin.com/in/kevin-mateo-gomez-diez-5494493b1/"
-          ><img src="https://skillicons.dev/icons?i=linkedin"
-        /></a>
+        <ol class="contacts">
+          <li>
+            <a href="mailto:gomezdiezkevinmateo@gmail.com" class="contacts"
+              ><img src="https://skillicons.dev/icons?i=gmail&theme=light"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/kevin-mateo-gomez-diez-5494493b1/"
+              ><img src="https://skillicons.dev/icons?i=linkedin&theme=light"
+            /></a>
+          </li>
+          <li>
+            <a href="https://github.com/KevinMateoG"><img src="https://skillicons.dev/icons?i=github" /></a>
+          </li>
+        </ol>
       </section>
     </div>
   </body>
