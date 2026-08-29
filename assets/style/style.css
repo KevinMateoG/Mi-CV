@@ -3,33 +3,91 @@
 }
 
 :root {
-  --honey: #c79839;
-  --charcoal: #1f1e1d;
-  --stone: #66625f;
-  --paper: #f5f1e8;
-  --card: #fffdfa;
-  --text: #2b2927;
-  --line: #ddd6c9;
+  --color-principal: #c79839; 
+  --color-oscuro: #1f1e1d; 
+  --color-fondo-pagina: #f5f1e8;
+  --color-tarjeta: #fffdfa;
+  --color-articulo: #fcfaf5;
+  --color-texto: #2b2927;
+  --color-borde: #ddd6c9;
+  --color-fuerte: #946816; 
+  --sombra-titulo: rgba(199, 152, 57, 0.7);
+  --texto-menu: #eee5d3;
+}
+
+body.tema-leon {
+  --color-principal: #0077b6; 
+  --color-oscuro: #023e8a; 
+  --color-fondo-pagina: #caf0f8; 
+  --color-tarjeta: #ffffff; 
+  --color-articulo: #f0f8ff; 
+  --color-texto: #1a2933; 
+  --color-borde: #90e0ef; 
+  --color-fuerte: #0096c7;
+  --sombra-titulo: rgba(0, 119, 182, 0.7);
+  --texto-menu: #e0fbfc;
+}
+
+body.tema-panda {
+  --color-principal: #d84b2a; 
+  --color-oscuro: #3d2314; 
+  --color-fondo-pagina: #fdf5e6; 
+  --color-tarjeta: #ffffff;
+  --color-articulo: #fff9f5; 
+  --color-texto: #4a3424; 
+  --color-borde: #f4c0a5; 
+  --color-fuerte: #b5381a;
+  --sombra-titulo: rgba(216, 75, 42, 0.7);
+  --texto-menu: #fff0e8;
+}
+
+body.tema-panda nav::before {
+  content: "Menú del panda ▶";
+}
+body.tema-panda nav:hover::before,
+body.tema-panda nav:focus-within::before {
+  content: "Menú del panda ◀";
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+.enlaces-superiores {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+.enlaces-superiores a {
+  color: var(--color-fuerte); 
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+.enlaces-superiores a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
 body {
   margin: 0;
   line-height: 1.65;
-  color: var(--text);
+  color: var(--color-texto);
   font-family: "Trebuchet MS", "Gill Sans", "Segoe UI", sans-serif;
-  background: var(--paper);
+  background: var(--color-fondo-pagina);
   padding: 1.2rem 0.8rem 2rem;
+  transition: background-color 0.4s ease;
 }
 
 body > div {
   max-width: 880px;
   margin: 0 auto;
-  background: var(--card);
-  border: 1px solid var(--line);
+  background: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
   border-radius: 10px;
   padding: 1.15rem 1rem 1.5rem;
 }
@@ -43,66 +101,71 @@ nav {
   align-items: center;
   gap: 0.25rem;
   padding: 0.45rem;
-  background: var(--charcoal);
+  background: var(--color-oscuro);
   border-radius: 8px;
-  max-width: 12rem;
+  max-width: 10.2rem;
   overflow: hidden;
   white-space: nowrap;
-  transition: max-width 0.25s ease;
+  transition:
+    max-width 0.35s ease,
+    background-color 0.3s ease;
 }
 
 nav::before {
-  content: "Menu del tejón ▶";
   display: flex;
   font-weight: 700;
-  color: #f4efe5;
+  color: var(--texto-menu);
   padding: 0.35rem 0.65rem;
   border-radius: 6px;
 }
 
-nav:hover,
-nav:focus-within {
-  max-width: 52rem;
+body.tema-tejon nav::before {
+  content: "Menú del tejón ▶";
+}
+body.tema-tejon nav:hover::before,
+body.tema-tejon nav:focus-within::before {
+  content: "Menú del tejón ◀";
 }
 
-nav:hover::before,
-nav:focus-within::before {
-  content: "Menu del tejón ◀";
+body.tema-leon nav::before {
+  content: "Menú marino ▶";
+}
+body.tema-leon nav:hover::before,
+body.tema-leon nav:focus-within::before {
+  content: "Menú marino ◀";
+}
+
+nav:hover,
+nav:focus-within {
+  max-width: 800px;
 }
 
 nav a {
   display: block;
   text-decoration: none;
-}
-
-nav a p {
   margin: 0;
-  padding: 0.45rem 0.7rem;
+  padding: 0.45rem 0.5rem;
   border-radius: 6px;
-  color: #eee5d3;
+  color: var(--texto-menu);
   font-weight: 600;
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
 }
 
-nav a:hover p,
-nav a:focus-visible p {
-  background: var(--honey);
-  color: var(--charcoal);
+nav a:hover,
+nav a:focus-visible {
+  background: var(--color-principal);
+  color: var(--color-tarjeta);
 }
 
 h1 {
   margin: 1.2rem auto 0.45rem;
   max-width: 34ch;
-  color: var(--charcoal);
-  border-bottom: 2px solid rgba(199, 152, 57, 0.7);
+  color: var(--color-oscuro);
+  border-bottom: 2px solid var(--sombra-titulo);
   width: fit-content;
   padding-bottom: 0.2rem;
-}
-
-#alimentacion::before {
-  content: "Alimentación";
 }
 
 article {
@@ -110,12 +173,12 @@ article {
   max-width: 72ch;
   text-align: left;
   padding: 0.85rem 0.95rem;
-  border-left: 3px solid var(--honey);
-  background: #fcfaf5;
+  border-left: 3px solid var(--color-principal);
+  background: var(--color-articulo);
   border-radius: 6px;
 }
 
-lu {
+ul {
   display: block;
   margin: 0.8rem 0;
   padding-left: 1.1rem;
@@ -130,7 +193,7 @@ ol {
 }
 
 strong {
-  color: #946816;
+  color: var(--color-fuerte);
 }
 
 .image-tejon {
@@ -139,7 +202,7 @@ strong {
   height: auto;
   margin: 1.2rem auto;
   border-radius: 8px;
-  border: 2px solid #3b3835;
+  border: 2px solid var(--color-oscuro);
 }
 
 @media (max-width: 760px) {
@@ -155,12 +218,15 @@ strong {
     white-space: normal;
   }
 
-  nav::before {
-    content: "Menu del tejón";
+  body.tema-tejon nav::before,
+  body.tema-leon nav::before {
+    content: "Menú de navegación ▼";
+    justify-content: center;
   }
 
-  nav a p {
+  nav a {
     font-size: 0.95rem;
+    text-align: center;
   }
 
   article {
